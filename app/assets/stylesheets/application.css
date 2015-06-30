@@ -1,0 +1,630 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ //= jquery.sidr.dark.css
+ */
+
+/*******************
+Header, Footer, Body
+*******************/
+input, textarea {
+	-webkit-appearance: none;
+	-webkit-border-radius: 0;
+}
+
+body{
+	margin: 0;
+	padding: 0;
+	background-color: #2c3e50;
+	font-family: 'Lato', sans-serif;
+	box-sizing:border-box;
+	position:relative;
+}
+
+header{
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	height: 80px;
+	background-color: #2ecc71;
+	position:relative;
+}
+
+header .text_left{
+	float: left;
+	margin-left: 10px;
+	margin-top: 20px;
+	color: white;
+	font-size:18px;
+}
+
+header .profil{
+	float: right;
+	margin-right: 10px;
+	margin-top: 10px;
+}
+
+header .navbar-link{
+	color: white;
+	text-decoration: none;
+	border:1px white solid;
+	margin-top: 5px;
+	padding: 5px;
+	display: inline-block;
+}
+
+header .navbar-link:hover{
+	opacity: 0.7;
+}
+
+header .logo img{
+	width:80px;
+}
+
+header .round-image-50{
+	background-color: white;
+	border: 1px solid #d9d9d9;
+	border-radius: 25px;
+	-moz-border-radius: 25px;
+	-webkit-border-radius: 25px;
+	height: 50px;
+	width: 50px;
+	overflow: hidden;
+	text-align: center;
+	margin-top:4px;
+	img { width: 100% }
+	-webkit-transition: all 200ms ease-in;
+		-webkit-transform: scale(1.0);
+		-ms-transition: all 200ms ease-in;
+		-ms-transform: scale(1.0);
+		-moz-transition: all 200ms ease-in;
+		-moz-transform: scale(1.0);
+		transition: all 200ms ease-in;
+		transform: scale(1.0);
+}
+
+header .round-image-50:hover{
+	-webkit-transition: all 200ms ease-in;
+		-webkit-transform: scale(1.2);
+		-ms-transition: all 200ms ease-in;
+		-ms-transform: scale(1.2);
+		-moz-transition: all 200ms ease-in;
+		-moz-transform: scale(1.2);
+		transition: all 200ms ease-in;
+		transform: scale(1.2);
+}
+
+#title{
+	text-align:center;
+	color:white;
+	position:absolute;
+	bottom:0;
+	left:0;
+	right:0;
+}
+
+#wrapper{
+	margin:120px auto;
+	max-width:1000px;
+}
+
+input:focus, textarea { outline: none !important; }
+
+footer{
+	text-align: center;
+	background-color: #34495e;
+	bottom:0;
+	width:100%;
+	height:70px;   /* Height of the footer */
+}
+
+footer p{
+	color: white;
+	padding-top: 25px ;
+}
+
+.form_devise{
+	margin:0 auto;
+	width: 300px;
+	text-align: center;
+	color:white;
+}
+
+.form_devise .field{
+	padding: 10px;
+}
+
+.form_devise a{
+	color: white;
+}
+
+.form_devise .actions input[type="submit"]{
+	width: 50%;
+	font-size: 20px;
+}
+
+.form_devise .field input{
+	height: 30px;
+	width:100%;
+	text-align: center;
+	color:#393f49;
+	font-size: 14px;
+}
+
+.form_devise #user_avatar{
+	width: 125px;
+	text-align: center;
+}
+
+#title h1 a{
+	color:white;
+	text-decoration:none;
+}
+
+#result_search_container{
+	text-align:center;
+}
+
+#result_search_container ul{
+	padding:0;
+	margin:0;
+}
+
+#result_search_container li{
+	background-color:#F2F2F2;
+	width:30%;
+	display:inline-block;
+	margin-top:20px;
+	border: solid 1px black;
+}
+
+#result_search_container ul li a{
+	color:black;
+	text-decoration:none;
+	display:block;
+	padding:15px;
+	outline:none;
+}
+
+#result_search_container ul .ui-tabs-active:after{
+	display:block;
+	content: "";
+	height:5px;
+	margin-top:-5px;
+	background-color:#2ecc71;
+	-webkit-transition: all 3s;
+    -moz-transition: all 3s;
+    -o-transition: all 3s;
+    transition: all 3s;
+}
+
+#result_search_container ul li:hover:after{
+	display:block;
+	content: "";
+	height:5px;
+	margin-top:-5px;
+	background-color:#2ecc71;
+	-webkit-transition: all 3s;
+    -moz-transition: all 3s;
+    -o-transition: all 3s;
+    transition: all 3s;
+}
+
+.result_search{
+	width:300px;
+	display:inline-block;
+	text-align:center;
+	margin: 5px;
+	color:#ecf0f1;
+	vertical-align:bottom;
+}
+
+.result_search img{
+	display:block;
+	margin: 0 auto;
+}
+
+.choice{
+	width:100%;
+	margin:0 auto;
+	height:30px;
+	margin:2% 0;
+}
+
+.viewed, .wish, .trash{
+	width: 15%;
+		height:30px;
+	display:inline-block;
+}
+
+.viewed, .wish{
+	vertical-align:middle;
+}
+
+.viewed img,
+.wish img{
+	width:40px;
+}
+.trash img{
+	width:30px
+}
+/*
+.viewed{
+	float:right;
+}
+
+.wish{
+	float:left;
+}*/
+
+#form_search{
+	text-align:center;
+}
+
+#form_search input,
+#form_search select,
+#form_search textarea {
+	display: block;
+	font-size: inherit;
+	padding: 10px;
+	box-sizing: border-box;
+	font-size: 20px;
+	margin: 0;
+	height: 60px;
+}
+
+#search {
+	width: 85%;
+	float:left;
+	text-align:center;
+	// font-size:26px;
+	background-color:#ecf0f1;
+	color:#34495e;
+	// text-transform:uppercase;
+	border:solid 1px #B7B7B7;
+}
+
+#submit{
+	display:block;
+	width:15%;
+	float:right;
+	height:60px;
+	text-align:center;
+	font-size:18px;
+	color:#34495e;
+	background-color:#ecf0f1 !important;
+	text-transform:uppercase;
+	border:none;
+	cursor:pointer;
+	border-left:solid thin #34495e;
+	-o-transition:all .2s ease-out;
+	-ms-transition:all .2s ease-out;
+	-moz-transition:all .2s ease-out;
+	-webkit-transition:all .2s ease-out;
+	/* ...and now override with proper CSS property */
+	transition:all .2s ease-out;
+	background-color:#2ecc71;
+}
+
+#submit:hover{
+	background-color:#34495e !important;
+	color: #ecf0f1;
+}
+
+.description_film_header {
+	position:relative;
+	height:300px;
+}
+
+.description_film_intro{
+	color:#fff;
+	position:absolute;
+	bottom:5%;
+	left:5%;
+	z-index:10;
+}
+
+.description_film_img{
+	width:100%;
+	height:300px;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	background-repeat: no-repeat;
+	filter: blur(2px);
+	-webkit-filter: blur(2px);
+	-moz-filter: blur(2px);
+	-o-filter: blur(2px);
+	-ms-filter: blur(2px);
+}
+
+.description_film_note{
+	position:absolute;
+	top: 8%;
+	right: 3%;
+	color:#fff !important;
+	z-index:10;
+}
+
+.description_film_actors{
+		color:#bdc3c7;
+}
+
+.description_film_infos{
+	padding:2%;
+	color:#fff;
+
+}
+
+.title_infos{
+	color:#2ecc71;
+	font-weight:bold;
+}
+
+.overlay{
+	width:100%;
+	height:100%;
+	background-color:#000;
+	position:absolute;
+	opacity:0.5;
+	z-index:2;
+}
+
+.videoWrapper{
+	position: relative;
+	padding-bottom: 56.25%; /* 16:9 */
+	padding-top: 25px;
+	height: 0;
+}
+
+.videoWrapper iframe{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+
+/*************LIST ******/
+.user_list_item{
+	width:100%;
+	color:#fff;
+	/*border-top:thin solid #2ecc71;
+	border-bottom:thin solid #2ecc71;*/
+}
+
+.bgdark{
+	background-color:#2c3e50
+}
+
+.bglight{
+	background-color:#34495e;
+}
+
+.user_list_item .image_item,
+.user_list_item .description_visible{
+	display:inline-block;
+}
+
+.user_list_item .description_visible{
+	width: 70%;
+	padding-left: 5%;
+	vertical-align: top;
+
+}
+
+.image_item{
+	max-height:200px
+}
+
+.user_list_item .videoWrapper{
+	display: none;
+}
+
+.user_list_item .see_more{
+	height:40px;
+	width:100%;
+	background-image:url('/assets/more.png');
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-color: #27ae60;
+	background-size: 40px;
+	cursor:pointer;
+	padding: 5px 0px;
+}
+
+/*.user_list_item .see_more img{
+	display:block;
+	margin:0 auto;
+	width: 40px;
+}*/
+
+
+
+
+::-webkit-input-placeholder { font-style:italic; 	text-transform:none; }
+::-moz-placeholder { font-style:italic; text-transform:none; } /* firefox 19+ */
+:-ms-input-placeholder { font-style:italic; text-transform:none; } /* ie */
+input:-moz-placeholder { font-style:italic; text-transform:none; }
+
+@media screen and (max-width: 720px) {
+
+	body{
+
+	}
+
+	.result_search{
+		width: 90%;
+	}
+
+	.result_search img{
+		display:block;
+		margin: 0 auto;
+		width:100% !important;
+	}
+
+  #submit{
+  	margin:0;
+  	padding:0;
+  	float:none;
+  	width:100%;
+  }
+
+  #search{
+  	width:100%;
+  }
+
+	.description_film_header {
+		position:relative;
+		height:300px;
+	}
+
+	.description_film_intro{
+		color:#fff;
+		position:absolute;
+		bottom:5%;
+		left:5%;
+		z-index:10;
+	}
+
+	.description_film_img{
+		width:100%;
+		height:300px;
+		-webkit-background-size: cover;
+		-moz-background-size: cover;
+		-o-background-size: cover;
+		background-size: cover;
+		background-repeat: no-repeat;
+		filter: blur(2px);
+		-webkit-filter: blur(2px);
+		-moz-filter: blur(2px);
+		-o-filter: blur(2px);
+		-ms-filter: blur(2px);
+	}
+
+	.description_film_note{
+		position:absolute;
+		top: 10%;
+		right: 3%;
+		color:#fff !important;
+		z-index:10;
+	}
+
+	.description_film_actors{
+			color:#bdc3c7;
+	}
+
+	.description_film_infos{
+		padding:2%;
+		color:#fff;
+
+	}
+
+	.overlay{
+		width:100%;
+		height:100%;
+		background-color:#000;
+		position:absolute;
+		opacity:0.5;
+		z-index:2;
+	}
+
+	.videoWrapper{
+		position: relative;
+		padding-bottom: 56.25%; /* 16:9 */
+		padding-top: 25px;
+		height: 0;
+	}
+
+	.videoWrapper iframe{
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+	}
+
+	/**** LIST ****/
+
+	.user_list_item{
+		position:relative;
+	}
+
+	.user_list_item .image_item{
+		display:inline-block;
+	}
+
+	.user_list_item .choice{
+		position: absolute;
+		width:50%;
+		top:5%;
+		right:0;
+	}
+
+	.user_list_item .choice .viewed,
+	.user_list_item .choice .wish{
+		float:none;
+	}
+
+
+	.user_list_item .description_visible{
+		width: 90%;
+		padding-left: 5%;
+		padding-right:5%;
+		display:block;
+	}
+
+	.image_item{
+		max-height:200px
+	}
+
+	.user_list_item .videoWrapper{
+		display: none;
+	}
+
+	.user_list_item .see_more{
+		padding:10px 0px;
+	}
+
+	.user_list_item .viewed,
+	.user_list_item .wish,
+	.user_list_item .trash{
+		display:block;
+		margin-bottom:20px;
+	}
+
+	.viewed, .wish, .trash{
+		margin-bottom:20px;
+		width:30%;
+		height:auto;
+	}
+
+	span.viewed{
+		margin: 0px 20px
+	}
+	span.wish{
+		margin: 0px 20px
+	}
+
+	.viewed img,
+	.wish img{
+		width:80px;
+	}
+	.trash img{
+		width:60px
+	}
+
+}

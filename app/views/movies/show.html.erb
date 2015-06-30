@@ -1,0 +1,120 @@
+<div id="description_film">
+	<div class="description_film_header">
+		<div class="overlay"></div>
+			<div class="description_film_img" style="background-image:url(https://image.tmdb.org/t/p/w185/<%= @result.poster_path %>)">
+			</div>
+			<div class="description_film_note">
+				<%
+					note = Integer(@result.vote_average)
+					note = note.round
+				%>
+				<% noneNote = 10 - note %>
+				<% i = 0 %>
+				<% while i < note %>
+					<%= image_tag 'note.png' %>
+					<% i += 1 %>
+				<% end %>
+				<% j= 0 %>
+				<% while j < noneNote %>
+					<%= image_tag 'noneNote.png' %>
+					<% j += 1 %>
+				<% end %>
+				(<%= @result.vote_count %> votes)
+			</div>
+			<div class="description_film_intro">
+				<h1><%= @result.title %></h1>
+				By
+				<% @credit.crew.each do |task| %>
+					<% if task.job == "Director" %>
+								<%= task.name %>
+					<% end %>
+				<% end %>
+				(<%= @result.release_date[0,4] %>) -
+				<span class="description_film_actors">
+					<% i = 0 %>
+					<% @cast.each do |task| %>
+						<% if i<2 %>
+							<%= task.name %>,
+						<% elsif i ==3 %>
+							<%= task.name %>
+						<% end %>
+						<% i+= 1 %>
+					<% end %>
+				</span>
+		</div>
+	</div>
+	<div class="description_film_infos">
+		<div class="choice">
+			<span class="wish">
+				<% if(@status[0] == "viewed") %>
+					<%= image_tag('viewed_gray.png', {:title => 'Viewed'}) %>
+				<% else %>
+					<%= link_to image_tag('viewed.png', {:title => 'Viewed'}), {:controller => "movies_properties", :action => "create", :id_movie => @result.id, :id_user => current_user.id, :state => 'viewed'} %>
+				<% end %>
+			</span>
+			<span class="viewed">
+			<% if(@status[0] == "to_see") %>
+					<%= image_tag('to_see_gray.png', {:title => 'To see'}) %>
+				<% else %>
+					<%= link_to image_tag('to_see.png', {:title => 'To see'}), {:controller => "movies_properties", :action => "create", :id_movie => @result.id, :id_user => current_user.id, :state => 'to_see'} %>
+				<% end %>
+			</span>
+		</div>
+		<p><span class="title_infos">Release date</span> : <%= @result.release_date %></p>
+		<p><span class="title_infos">Type</span> :
+		<% @result.genres.each do |genre| %>
+		<%= genre.name %>,
+		<% end %>
+		</p>
+		<p><span class="title_infos">Duration</span> : <%= @result.runtime %> min</p>
+		<p><span class="title_infos">Synopsis</span> :</p>
+		<p><%= @result.overview %></p>
+		<p><span class="title_infos">Casting</span> :
+			<% j = 0 %>
+			<% @cast.each do |task| %>
+				<% if j < 4 %>
+					<%= task.name %>,
+				<% elsif j == 5 %>
+					<%= task.name %>
+				<% end %>
+				<% j+= 1 %>
+			<% end %>
+			</p>
+		<p><span class="title_infos">Director(s)</span> :
+			<% @credit.crew.each do |task| %>
+				<% if task.job == "Director" %>
+							<%= task.name %>,
+				<% end %>
+			<% end %> </p>
+			<% budget = @result.budget %>
+			<% if budget == 0 %>
+				<% budget = "NC" %>
+				<p><span class="title_infos">Budget</span> : <%= budget %> </p>
+			<% elsif %>
+				<p><span class="title_infos">Budget</span> : <span style="color:#f1c40f">$</span><%= budget %> </p>
+			<% end %>
+
+	</div>
+	<div class="video">
+
+		<% if @trailer.present? %>
+
+			<% @trailer.each do |task| %>
+				<div class="videoWrapper">
+					<iframe src="https://www.youtube.com/embed/<%= task.source %>" frameborder="0" allowfullscreen></iframe>
+				</div>
+				<% break %>
+			<% end %>
+
+		<% elsif @result.poster_path.present? %>
+<!--
+			<h2>Image</h2>
+			<%= image_tag "https://image.tmdb.org/t/p/w185/"+@result.poster_path, alt: @result.title %>
+		<% else %>
+			<h2>Image</h2>
+			<%= image_tag 'unknow.jpg', alt: "unknonw" %> -->
+
+		<% end %>
+
+	</div>
+</div>
